@@ -8,3 +8,4 @@ Scripts
 crow/.idea
 *.egg-info
 *.csv
+*.cfg
