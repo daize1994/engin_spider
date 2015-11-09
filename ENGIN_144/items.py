@@ -25,10 +25,7 @@ class SlidebdItem(Item):
     Address = Field()
 
 class GooglePlayItem(Item):
-    # define the fields for your item here like:
-    # name = Field()
     name = Field()
     dev_name = Field()
     url = Field()
     email = Field()
-    # pass
