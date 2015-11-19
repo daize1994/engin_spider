@@ -1,6 +1,5 @@
 *.py[cod]
 build
-dist
 Include
 Lib
 Scripts
