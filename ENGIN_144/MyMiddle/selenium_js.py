@@ -21,8 +21,8 @@ class BroswerMiddleware(object):
     def process_request(self, request, spider):
         if (request.url[35:48]=='category/GAME'):
         #if request.url == ('https://play.google.com/store/apps/category/GAME/collection/topselling_new_free'or 'https://play.google.com/store/apps/category/GAME/collection/topselling_new_paid'):
-            print ("-----------------browser has been started--------------------------")
-            driver = webdriver.Firefox()
+            print ("-----------------Browser Has Been Started--------------------------")
+            driver = webdriver.Chrome()
             driver.get(request.url)
             copyright = driver.find_element_by_class_name('copyright')
             more = driver.find_element_by_id('show-more-button')
@@ -34,7 +34,7 @@ class BroswerMiddleware(object):
                 if more.is_displayed():
                     more.click()
                     print ("***********has click show-more button once !!!********")
-            print ("----------------The all page has been done!!!-----------------------")
+            print ("----------------The One Of Pages Has Been Done!!!-----------------------")
             content = driver.page_source.encode('utf-8')
             url = driver.current_url.encode('utf-8')
             driver.quit()

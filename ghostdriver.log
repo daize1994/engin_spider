@@ -1,7 +1,0 @@
-PhantomJS is launching GhostDriver...
-[INFO  - 2015-10-26T10:08:49.390Z] GhostDriver - Main - running on port 64117
-[INFO  - 2015-10-26T10:08:50.633Z] Session [8e08c310-7bc9-11e5-8be7-4b6b2bba27ba] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.7 Safari/534.34","webSecurityEnabled":true}
-[INFO  - 2015-10-26T10:08:50.633Z] Session [8e08c310-7bc9-11e5-8be7-4b6b2bba27ba] - page.customHeaders:  - {}
-[INFO  - 2015-10-26T10:08:50.633Z] Session [8e08c310-7bc9-11e5-8be7-4b6b2bba27ba] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.7","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"windows-7-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2015-10-26T10:08:50.633Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 8e08c310-7bc9-11e5-8be7-4b6b2bba27ba
-[ERROR - 2015-10-26T10:08:55.734Z] WebElementLocator - _handleLocateCommand - Element(s) NOT Found: GAVE UP. Search Stop Time: 1445854135710
