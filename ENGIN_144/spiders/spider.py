@@ -89,6 +89,7 @@ class slidedbSpider(CrawlSpider):
         items = []
         site = sel.xpath('//*[@class="column span-300 last sidecolumn"]')
         item = response.meta['item']
+		# country和Email可能有或者没有，这两个情况的路径稍有差别，所以下面就两个相加，保证一定可以根据路径可以取到值。
         item['Country'] = site.xpath('//div[h5="Country"]/span/text()').extract()+site.xpath('.//h4/text()').extract()
         item['Email'] = site.xpath('.//div[h5="Email"]/span/text()').extract()+site.xpath('.//div[h5="Email"]/span/a/text()').extract()
         item['Phone'] = site.xpath('.//div[h5="Phone"]/span/text()').extract()
