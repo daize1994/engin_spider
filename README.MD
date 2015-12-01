@@ -1,6 +1,6 @@
 # engin_spider
 
-网络爬虫Scrapy的应用：
+python网络爬虫Scrapy的应用：
 
 1.可爬取Google Play上的手机游戏信息
 
