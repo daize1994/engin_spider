@@ -1,4 +1,4 @@
-#打包exe专用，也可以直接执行
+
 from os import system
 print 30*'*';
 print 'Start Google Play Spider';

@@ -1,8 +1,8 @@
-*.py[cod]
 build
 Include
 Lib
 Scripts
+result
 .idea
 crow/.idea
 *.egg-info

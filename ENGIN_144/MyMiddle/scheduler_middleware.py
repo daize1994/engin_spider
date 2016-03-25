@@ -6,7 +6,7 @@ from scrapy.utils.job import job_dir
 from scrapy.utils.request import request_fingerprint
 
 '''
-此scrapy中间件本用于排重url，但是在slidebd网站爬虫时由于特殊需求，很多url不能被排重，
+此scrapy中间件本用于排重url，但是在slidebd网站爬虫时由于特殊需求，很多url不应该被排重掉，
 因此复制了这个文件并修改使其不排重
 '''
 class BaseDupeFilter(object):

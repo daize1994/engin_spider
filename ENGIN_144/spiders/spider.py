@@ -4,7 +4,7 @@ from scrapy import Request, FormRequest
 from scrapy.selector import Selector
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.http import Request
-from ENGIN_144.items import SlidebdItem, GooglePlayItem
+from ENGIN_144.items import SlidebdItem, GooglePlayItem, LagouItem, zhuhsou360Item
 
 '''
    slidedb爬虫需求
@@ -142,3 +142,51 @@ class SpiderSpider(CrawlSpider):
              item['email'] = sel.xpath('.//a[@class="dev-link"][1]/@href').extract()[0][7:].encode('utf-8')
          items.append(item)
          return items
+
+'''
+    抓取拉勾网的公司名称
+'''
+class LagouSpider(CrawlSpider):
+    name = "lagou_spider"
+    start_urls = [
+        "http://www.lagou.com/jobs/list_%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91?px=default&city=%E6%88%90%E9%83%BD"
+    ]
+    def parse(self, response):
+        site = Selector(response)
+        pages = site.xpath('.//*[@class="content_left"]')
+        items = []
+        for page in pages:
+            i = LagouItem()
+            i['campany'] = page.xpath('.//div[@class="company_name"]/a/text()').extract()
+            items.append(i)
+            return items
+
+'''
+    360游戏中心爬虫
+'''
+class ZhuShou360Spider(CrawlSpider):
+    name = "zhushou360"
+    start_urls = ["http://zhushou.360.cn/list/index/cid/102139/?page=1"]
+    page_index = 1
+
+    def parse(self, response):
+        self.page_index += 1
+        res = Selector(response)
+        items = []
+        sites = res.css('#iconList>li>h3>a')
+        for site in sites:
+            item = zhuhsou360Item()
+            detail_url = site.css('::attr(href)').extract()[0]
+            item['app_name'] = site.css('::text').extract()[0].encode('utf-8')
+            items.append[item]
+            yield Request('http://zhushou.360.cn' + detail_url, meta={'item': item}, callback=self.parse_detail)
+        if self.page_index < 101:
+            yield Request('http://zhushou.360.cn/list/index/cid/102139/?page=%d' % self.page_index )
+
+    def parse_detail(self,response):
+        res = Selector(response)
+        items = []
+        item = response.meta['item']
+        item['campany_name'] = res.xpath('.//*[@id="sdesc"]/div/div/table/tbody/tr[1]/td[1]/text()').extract()[0].encode('utf-8')
+        items.append(item)
+        return items

@@ -29,3 +29,10 @@ class GooglePlayItem(Item):
     dev_name = Field()
     url = Field()
     email = Field()
+
+class LagouItem(Item):
+    campany = Field()
+
+class zhuhsou360Item(Item):
+    app_name = Field()
+    campany_name = Field()
