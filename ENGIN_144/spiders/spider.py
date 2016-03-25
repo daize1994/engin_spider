@@ -178,7 +178,7 @@ class ZhuShou360Spider(CrawlSpider):
             item = zhuhsou360Item()
             detail_url = site.css('::attr(href)').extract()[0]
             item['app_name'] = site.css('::text').extract()[0].encode('utf-8')
-            items.append[item]
+            items.append(item)
             yield Request('http://zhushou.360.cn' + detail_url, meta={'item': item}, callback=self.parse_detail)
         if self.page_index < 101:
             yield Request('http://zhushou.360.cn/list/index/cid/102139/?page=%d' % self.page_index )
